@@ -40,11 +40,14 @@ Each name links to its Github repo.
 - [`rWasm`](https://github.com/secure-foundations/rWasm/tree/mswasm): source
   code for our AOT compiler from MSWasm bytecode. Consists of rWasm with
   modifications to support compiling from MSWasm bytecode. This is available
-  on the `PATH` of the docker container: Running `rWasm -w --ms-wasm <path/to/
-  mswasm/file>` will create a folder named `generated`. The `--ms-wasm-packed-
-  tags`, `--ms- wasm-no-tags`, `--ms-wasm-baggy-bounds` tags can optionally be
-  added to enable these Options, run `rwasm –help` for more info. `cd`ing into
-  the `generated` folder and running `cargo run --release` will run the program.
+  on the `PATH` of the docker container: running `rWasm -w --ms-wasm
+  <path/to/mswasm/file>` will create a folder named `generated`. The
+  `--ms-wasm-packed-tags`, `--ms-wasm-no-tags`, `--ms-wasm-baggy-bounds` flags
+  can optionally be added to change the runtime enforcement used. Run `rwasm -–help`
+  for more information and additional options. `cd`ing into the `generated` folder
+  and running `cargo run --release` will run the program. To compile to Cheri-C
+  instead, use the [`mswasm-cheri`](https://github.com/secure-foundations/rWasm/tree/mswasm-cheri)
+  branch and add the `--cheri` flag.
 
 - [`mswasm-graal`](https://github.com/PLSysSec/mswasm-graal): source code for
   our JIT compiler from MSWasm bytecode. Consists of GraalVM with modifications
